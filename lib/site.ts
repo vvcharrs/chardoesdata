@@ -2,7 +2,8 @@ export const site = {
   name: 'CharDoesData',
   description:
     'An independent data journalism publication investigating fashion, beauty, retail, luxury, consumer behaviour, and culture.',
-  url: 'https://chardoesdata.github.io',
+  url: 'https://vvcharrs.github.io/chardoesdata/',
+  basePath: '/chardoesdata',
   locale: 'en_US',
   themeColor: '#F7F4EF',
   defaultImage: '/images/blue-season-cover.png',
@@ -21,5 +22,5 @@ export function absoluteUrl(path = '/') {
   const normalizedPath =
     !hasFileExtension && !path.endsWith('/') ? `${path}/` : path;
 
-  return new URL(normalizedPath, site.url).toString();
+  return new URL(normalizedPath.replace(/^\//, ''), site.url).toString();
 }

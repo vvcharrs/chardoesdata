@@ -1,4 +1,5 @@
 import { getAllInvestigations } from '@/lib/investigations';
+import { site } from '@/lib/site';
 
 export const dynamic = 'force-static';
 
@@ -11,7 +12,7 @@ export function GET() {
       date,
       tags,
       readingTime,
-      url: `/investigations/${slug}/`
+      url: `${site.basePath}/investigations/${slug}/`
     })
   );
 
