@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { formatDate, type Investigation } from '@/lib/investigations';
+import { withBasePath } from '@/lib/site';
 import { Tag } from '@/components/Tag';
 
 export function InvestigationCard({
@@ -15,7 +16,7 @@ export function InvestigationCard({
         className="block overflow-hidden bg-camel/25"
       >
         <Image
-          src={investigation.coverImage}
+          src={withBasePath(investigation.coverImage)}
           alt={investigation.coverAlt}
           width={640}
           height={480}

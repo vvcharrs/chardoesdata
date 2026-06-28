@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { type Investigation } from '@/lib/investigations';
+import { withBasePath } from '@/lib/site';
 import { Tag } from '@/components/Tag';
 
 export function Hero({ investigation }: { investigation?: Investigation }) {
@@ -26,7 +27,7 @@ export function Hero({ investigation }: { investigation?: Investigation }) {
           >
             <div className="overflow-hidden bg-camel/30 shadow-[0_22px_70px_rgba(40,11,15,0.12)]">
               <Image
-                src={investigation.coverImage}
+                src={withBasePath(investigation.coverImage)}
                 alt={investigation.coverAlt}
                 width={1400}
                 height={1120}

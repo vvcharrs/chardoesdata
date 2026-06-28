@@ -12,7 +12,7 @@ import { ReadingProgressBar } from '@/components/ReadingProgressBar';
 import { TableOfContents } from '@/components/TableOfContents';
 import { Tag } from '@/components/Tag';
 import { createMetadata } from '@/lib/seo';
-import { absoluteUrl } from '@/lib/site';
+import { absoluteUrl, withBasePath } from '@/lib/site';
 import {
   formatDate,
   getAllInvestigations,
@@ -137,7 +137,7 @@ export default async function InvestigationPage({ params }: PageProps) {
           <figure className="mt-10 lg:mt-12">
             <div className="overflow-hidden bg-camel/25 shadow-[0_24px_80px_rgba(40,11,15,0.12)]">
               <Image
-                src={investigation.coverImage}
+                src={withBasePath(investigation.coverImage)}
                 alt={investigation.coverAlt}
                 width={1600}
                 height={900}

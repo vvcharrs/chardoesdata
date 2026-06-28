@@ -24,3 +24,15 @@ export function absoluteUrl(path = '/') {
 
   return new URL(normalizedPath.replace(/^\//, ''), site.url).toString();
 }
+
+export function withBasePath(path: string) {
+  if (!path.startsWith('/')) {
+    return path;
+  }
+
+  if (path.startsWith(site.basePath)) {
+    return path;
+  }
+
+  return `${site.basePath}${path}`;
+}

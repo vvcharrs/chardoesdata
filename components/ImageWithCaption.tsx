@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { withBasePath } from '@/lib/site';
 
 export function ImageWithCaption({
   src,
@@ -13,7 +14,7 @@ export function ImageWithCaption({
     <figure className="my-16">
       <div className="overflow-hidden bg-camel/25">
         <Image
-          src={src}
+          src={withBasePath(src)}
           alt={alt}
           width={1600}
           height={1000}
